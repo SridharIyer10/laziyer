@@ -19,6 +19,8 @@ const CreateContentSchema = z.object({
   tags: z.array(z.string().max(100)).max(30).optional(),
 });
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");

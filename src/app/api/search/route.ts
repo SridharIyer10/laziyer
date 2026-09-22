@@ -47,6 +47,8 @@ function tagSubquery(typeKey: ContentTypeKey, tagFilters: string[]) {
     )`;
 }
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest) {
   // 30 searches per minute per IP
   const ip = getClientIp(request);
